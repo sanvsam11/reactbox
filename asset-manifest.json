@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/reactbox/static/css/main.02873e6e.chunk.css",
+    "main.js": "/reactbox/static/js/main.e1fb3496.chunk.js",
+    "main.js.map": "/reactbox/static/js/main.e1fb3496.chunk.js.map",
+    "runtime-main.js": "/reactbox/static/js/runtime-main.a0a8b46c.js",
+    "runtime-main.js.map": "/reactbox/static/js/runtime-main.a0a8b46c.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/reactbox/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.c79129b0.chunk.js": "/reactbox/static/js/2.c79129b0.chunk.js",
+    "static/js/2.c79129b0.chunk.js.map": "/reactbox/static/js/2.c79129b0.chunk.js.map",
+    "static/js/3.ef2201e4.chunk.js": "/reactbox/static/js/3.ef2201e4.chunk.js",
+    "static/js/3.ef2201e4.chunk.js.map": "/reactbox/static/js/3.ef2201e4.chunk.js.map",
+    "index.html": "/reactbox/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/reactbox/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.02873e6e.chunk.css.map": "/reactbox/static/css/main.02873e6e.chunk.css.map",
+    "static/js/2.c79129b0.chunk.js.LICENSE.txt": "/reactbox/static/js/2.c79129b0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0a8b46c.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.c79129b0.chunk.js",
+    "static/css/main.02873e6e.chunk.css",
+    "static/js/main.e1fb3496.chunk.js"
+  ]
+}
