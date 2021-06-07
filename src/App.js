@@ -2,10 +2,11 @@ import './App.css';
 import Notes from './modules/Notes'
 import NoteView from './modules/NoteView'
 import {Container, Row, Col, NavItem} from 'react-bootstrap'
-import NotesData from './Notes'
 import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+
 function App() {
-  const [notes, setNotes] = useState(NotesData)
+  const [notes, setNotes] = useState([])
   const [note, setNote] = useState('')
 
   const handleClick=noteVal=>{
@@ -29,8 +30,8 @@ function App() {
     setNote(current=>{
       return{
         "id":current.id,
-        "text":type=='textarea'?value:current.text,
-        "title":type=='text'?value:current.title
+        "text":type==='textarea'?value:current.text,
+        "title":type==='text'?value:current.title
       }
     })
     
@@ -46,6 +47,11 @@ function App() {
     }]
     })
   }
+  useEffect(()=>{
+    axios.get("/Notes.json").then((response)=>{
+      setNotes(response.data)
+    })
+  },[])
   return (
     <div className="App">
       <header className="App-header">
