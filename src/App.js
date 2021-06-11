@@ -2,10 +2,11 @@ import './App.css';
 import Notes from './modules/Notes'
 import NoteView from './modules/NoteView'
 import {Container, Row, Col, NavItem} from 'react-bootstrap'
-import NotesData from './Notes'
 import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+
 function App() {
-  const [notes, setNotes] = useState(NotesData)
+  const [notes, setNotes] = useState([])
   const [note, setNote] = useState('')
 
   const handleClick=noteVal=>{
@@ -20,12 +21,12 @@ function App() {
           return item
     }))
     setNote(noteVal)
-    console.log(note)
+    //console.log(note)
   }
   const handleChange=(e, id)=>{
     const {value, type} = e.target
-    console.log(type)
-    console.log(value)
+    //console.log(type)
+    //console.log(value)
     setNote(current=>{
       return{
         "id":current.id,
@@ -38,14 +39,32 @@ function App() {
   const handleAdd=()=>{
     setNotes(oldNotes=>{
       const idNew = oldNotes.length+2
-      console.log(idNew)
-      return [...oldNotes,{
+      //console.log(idNew)
+      return [{
         "id": idNew,
         "title":"untitled",
-        "text":""
-    }]
+        "text":"",
+    },...oldNotes]
     })
+    //setNote(notes[0])
   }
+  useEffect(()=>{
+    const url = 'http://localhost:5000'
+    axios.get(url+'/notesData')
+    .then(res=>{
+      setNotes(res.data)
+    })
+    
+  },[])
+  useEffect(()=>{
+    setNotes(oldNotes=>oldNotes.map(noteItem=>{
+        if(note.id==noteItem.id)
+          return {...note}
+        else
+          return noteItem
+      })
+    )
+  },[note])
   return (
     <div className="App">
       <header className="App-header">
@@ -55,7 +74,7 @@ function App() {
       </header>
       <Container>
         <Row>
-          <Col sm={2}>
+          <Col sm={2} className="scroll">
             <Notes 
               notes={notes} 
               currentId={note.id}

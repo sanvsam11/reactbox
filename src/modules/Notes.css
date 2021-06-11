@@ -1,9 +1,17 @@
 ul{
     list-style: none;
+    padding-left: 0%
 }
 button{
     width: 100%;
 }
 .selected{
-    background-color: cyan;
+    background-color: lightgrey !important;
+    border: solid blue 1px;
+}
+.MuiCardContent-root {
+	padding-top: unset !important;
+}
+.MuiCardContent-root:hover{
+    border: solid blue 1px;
 }
