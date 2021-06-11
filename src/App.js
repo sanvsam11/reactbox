@@ -43,7 +43,7 @@ function App() {
       return [{
         "id": idNew,
         "title":"untitled",
-        "text":"",
+        "text":"sampleText",
     },...oldNotes]
     })
     //setNote(notes[0])
@@ -72,7 +72,7 @@ function App() {
           Note App
         </p>
       </header>
-      <Container>
+      <Container fluid>
         <Row>
           <Col sm={2} className="scroll">
             <Notes 

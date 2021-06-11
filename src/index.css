@@ -15,7 +15,7 @@ html, body, .app, .container, .row {
   height: 100%;
   width: 100%;
 }
-.container, .row, .App, .col-sm-2, .col-sm-10, .full{
+.container, .App, .full{
   height: 80vh;
   width: 100%;
 }
