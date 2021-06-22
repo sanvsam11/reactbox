@@ -4,10 +4,20 @@ const path = require('path')
 app.get('/hello', (req, res)=>{
     res.send("Hello World")
 })
-var fs = require('fs')
-const notesData = JSON.parse(fs.readFileSync('./Notes.json', 'utf-8'))
-var firebase = require("firebase-admin");
 
+const fs = require('fs')
+const notesData = JSON.parse(fs.readFileSync('./Notes.json', 'utf-8'))
+const firebase = require("firebase-admin");
+const provider = new firebase.auth.GoogleAuthProvider()
+firebase.auth().signInWithRedirect(provider)
+firebase.auth().getRedirectResult().then((result)=>{
+    const token = result.credential.accessToken
+    const user = result.user
+}).catch((error)=>{
+    const errorCode = error.code
+    const errorMessage = error.message
+
+})
 var serviceAccount = require("./serviceAccountKey.json");
 
 // firebase.initializeApp({

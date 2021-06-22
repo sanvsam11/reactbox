@@ -9,7 +9,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import Typography from '@material-ui/core/Typography';
 
 export default function Notes({notes, handleClick, currentId, handleAdd}){
-    //console.log(notes, currentId)
+    //   console.log(notes, currentId)
     return(
         <div>
             <Button onClick={e=>handleAdd()}>Add Note</Button>
